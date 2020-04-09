@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+require('dotenv/config')
 
 app.use(express.json())
 
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
     res.send('Stupid Express')
 })
 
-mongoose.connect('mongodb://localhost:27017/database', 
+mongoose.connect(process.env.DB_URI, 
     { 
         useNewUrlParser: true,
         useUnifiedTopology: true  

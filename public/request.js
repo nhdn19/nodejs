@@ -51,7 +51,7 @@ const sendRequest = (method, url, data) => {
 }
 
 const getBooks = () => {
-    sendRequest('GET', 'http://localhost:8000/books')
+    sendRequest('GET', '/books')
     .then(data => displayBooks(data))
 }
 
@@ -66,12 +66,12 @@ const postBook = () => {
         title: bookTitle,
         description: bookDescript
     }
-    sendRequest('POST', 'http://localhost:8000/books', data)
+    sendRequest('POST', '/books', data)
     .then(data => displayBooks(data))
 }
 
 const deleteBook = () => {
-    sendRequest('DELETE', 'http://localhost:8000/books', checkedBooks())
+    sendRequest('DELETE', '/books', checkedBooks())
     .then(data => displayBooks(data))
 }
 
