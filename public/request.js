@@ -6,11 +6,6 @@ const titleInput = document.getElementById('title-inp')
 const descriptInput = document.getElementById('descript-inp')
 const booksList = document.getElementById('book-list')
 
-getButton.addEventListener('click', getBooks)
-postButton.addEventListener('click', postBook)
-deleteButton.addEventListener('click', deleteBook)
-
-
 const displayBooks = (books) => {
     booksList.textContent = ''
     for (var i = 0; i < books.length; i++) {
@@ -79,3 +74,7 @@ const deleteBook = () => {
     sendRequest('DELETE', 'http://localhost:8000/books', checkedBooks())
     .then(data => displayBooks(data))
 }
+
+getButton.addEventListener('click', getBooks)
+postButton.addEventListener('click', postBook)
+deleteButton.addEventListener('click', deleteBook)
