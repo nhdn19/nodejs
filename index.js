@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.send('Stupid Express')
 })
 
-mongoose.connect(process.env.DB_URI, 
+mongoose.connect('mongodb://localhost:27017/database',
     { 
         useNewUrlParser: true,
         useUnifiedTopology: true  
